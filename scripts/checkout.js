@@ -3,11 +3,21 @@ let validation = document.getElementById("validation");
 
 function addValidationMessage(input) {
     let field = input.getAttribute("id");
-    validation.innerHTML += field + "is a required field";
+    let p = document.createElement("p");
+    p.setAttribute("id", field + "Val");
+    p.innerHTML = field + "is a required field";
+    if(p) {
+        p.remove();
+    }
+    validation.appendChild(p);
 }
 
-function removeValidationMessage() {
-
+function removeValidationMessage(input) {
+    let field = input.getAttribute("id");
+    let p = document.getElementById(field + "Val");
+    if(p) {
+        p.remove();
+    }
 }
 
 button.addEventListener('click', function(event) {
@@ -16,31 +26,31 @@ button.addEventListener('click', function(event) {
 
     firstName.value === ""
     ? addValidationMessage(firstName)
-    : removeValidationMessage();
+    : removeValidationMessage(firstName);
 
     let lastName = document.getElementById("last-name");
     lastName.value === ""
         ? addValidationMessage(lastName)
-        : removeValidationMessage();
+        : removeValidationMessage(lastName);
 
     let email = document.getElementById("email");
     email.value === ""
         ? addValidationMessage(email)
-        : removeValidationMessage();
+        : removeValidationMessage(email);
 
     let streetAddress = document.getElementById("street-address");
     streetAddress.value === ""
         ? addValidationMessage(streetAddress)
-        : removeValidationMessage();
+        : removeValidationMessage(streetAddress);
 
     let zipCode = document.getElementById("zip-code");
     zipCode.value === ""
         ? addValidationMessage(zipCode)
-        : removeValidationMessage();
+        : removeValidationMessage(zipCode);
 
     let city = document.getElementById("city");
     city.value === ""
         ? addValidationMessage(city)
-        : removeValidationMessage();
+        : removeValidationMessage(city);
 });
 
