@@ -27,8 +27,7 @@ function validateField(input) {
         : removeValidationMessage(input);
 }
 
-button.addEventListener('click', function(event) {
-    event.preventDefault();
+function validateForm() {
     let firstName = document.getElementById("first-name");
     validateField(firstName);
 
@@ -46,5 +45,10 @@ button.addEventListener('click', function(event) {
 
     let city = document.getElementById("city");
     validateField(city);
+}
+
+button.addEventListener('click', function(event) {
+    event.preventDefault();
+    validateForm();
 });
 
