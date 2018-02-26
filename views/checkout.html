@@ -5,24 +5,25 @@
     <title>Checkout</title>
 </head>
 <body>
-<form action="">
+<form action="" novalidate>
     <label for="first-name">First name</label>
-    <input id="first-name" type="text">
+    <input id="first-name" type="text" required>
     <label for="last-name">Last name</label>
-    <input id="last-name" type="text">
+    <input id="last-name" type="text" required>
     <label for="email">Email</label>
-    <input id="email" type="text">
+    <input id="email" type="text" required>
     <label for="phone-number">Phone number</label>
     <input id="phone-number" type="text">
     <label for="street-address">Street address</label>
-    <input id= "street-address"type="text">
+    <input id= "street-address"type="text" required>
     <label for="zip-code">Zip code</label>
-    <input id="zip-code" type="text">
+    <input id="zip-code" type="text" required>
     <label for="city">City</label>
-    <input id="city" type="text">
+    <input id="city" type="text" required>
     <label for="comments">Comments</label>
     <textarea id="comments"></textarea>
     <button id="submit">Submit</button>
+    <div id="validation"></div>
 </form>
 </body>
 </html>
