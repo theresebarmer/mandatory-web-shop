@@ -3,12 +3,13 @@ let validation = document.getElementById("validation");
 
 function addValidationMessage(input) {
     let field = input.getAttribute("id");
+    let existingParagraph = document.getElementById(field + "Val");
+    if(existingParagraph) {
+        existingParagraph.remove();
+    }
     let p = document.createElement("p");
     p.setAttribute("id", field + "Val");
     p.innerHTML = field + "is a required field";
-    if(p) {
-        p.remove();
-    }
     validation.appendChild(p);
 }
 
